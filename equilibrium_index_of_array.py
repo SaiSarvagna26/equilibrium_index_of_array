@@ -1,11 +1,20 @@
-list_a=list(map(int,input().split()))
-total=sum(list_a)
-counter=0
-for i in range(len(list_a)):
-    total-=list_a[i]
-    if counter==total:
-        print(i)
-        break
-    counter+=list_a[i]
-else:
-    print(-1)
+def count_even_numbers(A, B):
+    result = []
+    
+    for i in B:
+        start_index, end_index = i[0], i[1]
+        count = 0
+        
+        for j in range(start_index, end_index + 1):
+            if A[j] % 2 == 0:
+                count += 1
+        
+        result.append(count)
+    
+    return result
+
+A = list(map(int,input().split()))
+B = eval(input())
+output = count_even_numbers(A, B)
+print(output) 
+
